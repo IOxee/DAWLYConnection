@@ -1,4 +1,4 @@
-![DAWLYConnection LOGO]()
+![DAWLYConnection LOGO](assets/img/gitlogo.png)
 
 # SCREENSHOTS
 | | | |
