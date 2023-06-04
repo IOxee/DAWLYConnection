@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAW.ly</title>
+    <link href="https://fonts.cdnfonts.com/css/circular-std" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js"
+        integrity="sha512-v3ygConQmvH0QehvQa6gSvTE2VdBZ6wkLOlmK7Mcy2mZ0ZF9saNbbk19QeaoTHdWIEiTlWmrwAL4hS8ElnGFbA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+        integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+        integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.3/sweetalert2.min.css"
+        integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/sidebars.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="./assets/img/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="btn mx-2 my-3" type="submit" href="#">Why Dawly?</a>
+                    </li>
+                    <li>
+                        <a class="btn mx-2 my-3" href="#">Products</a>
+                    </li>
+                    <li>
+                        <a class="btn mx-2 my-3" type="submit">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="btn mx-2 my-3" type="submit" href="#">Resources</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <ul class="navbar-nav" id="navbar_auth">
+                    <li>
+                        <button type="button" class="btn mx-2 my-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-box-arrow-in-right"></i> Log in
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn link-primary mx-2 my-3" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">
+                            <i class="bi bi-person-plus"></i> Sign up for free
+                        </button>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-dark mx-2 my-3" type="submit" href="">Get a Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-bg" id="section_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="custom_font">We've expanded!
+                        Shorten URLs. Generate QR Codes.
+                        And now, create Link-in-bios.</h1>
+                    <a href="" class="btn btn-dark btn-lg">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <section class="container-divider"></section> -->
+    
+    <section id="shortener_section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input type="text" id="url_inputbox" class="form-control form-control-lg"
+                            placeholder="Shorten your link" name="url">
+                        <button class="btn btn-primary btn-lg" id="shortener">Shorten</button>
+                    </div>
+                    <p class="form-text text-muted">By clicking SHORTEN, you are agreeing to DAWly's <a
+                            class="text-secondary" href="https://bitly.com/pages/terms-of-service">Terms of Service</a>,
+                        <a class="text-secondary" href="https://bitly.com/pages/privacy">Privacy Policy</a>, and <a
+                            class="text-secondary" href="https://bitly.com/pages/acceptable-use">Acceptable Use
+                            Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="three-columns my-5" id="three_columns">
+        <div class="cell">
+            <div class="block-intro">
+                <h3 class="header-m custom_font">DAW.LY Connections Platform</h3>
+                <h4>All the products you need to build brand connections, manage links and QR Codes, and connect with
+                    audiences everywhere, in a single unified platform.</h4>
+            </div>
+        </div>
+        <div class="my-2 container d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-link"></i> Link Management</h5>
+                            <p class="card-text">A comprehensive solution to help make every point of connection between
+                                your content and your audience more powerful.</p>
+                            <hr>
+                            <p><strong>Popular Link Management Features</strong></p>
+                            <ul class="fancy-list">
+                                <li>URL shortening at scale</li>
+                                <li>Custom links with your brand</li>
+                                <li>URL redirects</li>
+                                <li>Advanced analytics &amp; tracking</li>
+                            </ul>
+                            <div class="card-buttons">
+                                <a id="pricing_clicked_link_management" class="btn btn-dark btn-wide"
+                                    href="https://bitly.com/pages/pricing">Get Started for Free</a>
+                                <a id="product_clicked_link_management" class="btn btn-link"
+                                    href="https://bitly.com/pages/products/link-management">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-qr-code"></i> QR Codes</h5>
+                            <p class="card-text">QR Code solutions for every customer, business and brand experience.</p>
+                            <hr>
+                            <p><strong>Popular QR Code Features</strong></p>
+                            <ul class="fancy-list">
+                                <li>Fully customizable QR Codes</li>
+                                <li>Dynamic QR Codes</li>
+                                <li>QR Code types &amp; destination options</li>
+                                <li>Advanced analytics &amp; tracking</li>
+                            </ul>
+                            <div class="card-buttons">
+                                <a id="qrcg_clicked_qr_codes" class="btn btn-dark btn-wide" href="#qr-modal"
+                                    data-open="qr-modal" aria-controls="qr-modal" aria-haspopup="true" tabindex="0">Get
+                                    Started for Free</a>
+                                <a id="product_clicked_qr_codes" class="btn btn-link"
+                                    href="https://bitly.com/pages/products/qr-codes">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-person-badge"></i> Link-in-bio <span
+                                    class="badge bg-secondary">New</span></h1>
+                            </h5>
+                            <p class="card-text">Bitly Link-in-bio, powered by Bitly Link Management, to help you curate,
+                                package and track your best links.</p>
+                            <hr>
+                            <p><strong>Popular Link-in-bio Features</strong></p>
+                            <ul class="fancy-list">
+                                <li>Custom URLs for social media</li>
+                                <li>Customizable landing page</li>
+                                <li>Easy-to-manage links</li>
+                                <li>Link and landing page tracking</li>
+                            </ul>
+                            <div class="card-buttons">
+                                <a id="pricing_clicked_link_in_bio" class="btn btn-dark btn-wide"
+                                    href="https://bitly.com/pages/pricing">Get Started for Free</a>
+                                <a id="product_clicked_link_in_bio" class="btn btn-link"
+                                    href="https://bitly.com/pages/products/link-in-bio">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="d-none" id="dashboard">
+        <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem; position: fixed; top: 10vh; left: 0; bottom: 0;" id="sidebar">
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                <li class="nav-item">
+                    <button data-goto="createnew" class="nav-link py-3 border-bottom rounded-0" aria-current="page"
+                        title="Create New" data-bs-toggle="tooltip" id="createnew">
+                        <i class="bi bi-plus-lg"></i>
+                        <span class="visually-hidden">Create New</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button data-goto="dashboard" class="nav-link active py-3 border-bottom rounded-0"
+                        aria-current="page" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right" id="dashboard">
+                        <i class="bi bi-house-door-fill"></i>
+                    </button>
+                </li>
+                <li>
+                    <button data-goto="manage" class="nav-link py-3 border-bottom rounded-0" title="Links"
+                        data-bs-toggle="tooltip" data-bs-placement="right" id="links">
+                        <i class="bi bi-link-45deg"></i>
+                    </button>
+                </li>
+                <li>
+                    <button data-goto="folders" class="nav-link py-3 border-bottom rounded-0" title="El Finder" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <i class="bi bi-folder"></i>
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-link py-3 border-bottom rounded-0" title="Link in Bio" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <i class="bi bi-person-badge"></i>
+                    </button>
+                </li>
+                <li>
+                    <button data-goto="users" class="nav-link py-3 border-bottom rounded-0" title="Usuarios" id="administration" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <i class="bi bi-people"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-left: 4.5rem;" id="dashboard_container">
+        </div>
+    </section>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <h2 class="text-center mt-3">Log in and start sharing</h2>
+                            <p class="text-center">Don't have an account?<br />
+                                <button type="button" class="btn btn-outline-primary mx-2 my-3" data-bs-toggle="modal"
+                                    data-bs-target="#registerModal">
+                                    Sign up
+                                </button>
+                            </p>
+                            <p class="text-center mt-4">To log in, enter your email address and password.</p>
+                            <p class="text-center">To reset your password, click <a class="text-decoration-none"
+                                    href="#" id="forgotLink">"Forgot your password?"</a></p>
+
+                            <form id="loginForm" method="post">
+                                <div class="form-group mb-3">
+                                    <label for="login_email">Email address</label>
+                                    <input type="email" name="email" id="login_email" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="login_password">Password</label>
+                                    <input type="password" name="password" id="login_password" class="form-control"
+                                        required>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-outline-primary" id="loginButton"><i
+                                            class="bi bi-box-arrow-in-right"></i> Log in</button>
+                                </div>
+                            </form>
+                            <p class="text-center mt-4">By signing in with an account, you agree to DAWly's <a
+                                    class="text-decoration-none" href="#">Terms of Service</a>, <a
+                                    class="text-decoration-none" href="#">Privacy Policy</a>, and <a
+                                    class="text-decoration-none" href="#">Acceptable Use Policy</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <h2 class="text-center">Sign up and start shortening</h2>
+                            <p class="text-center">Already have an account?<br />
+                                <button class="btn btn-outline-primary mx-2 my-3" id="loginLink" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Log in</button>
+                            </p>
+                            <p class="text-center mt-3">OR</p>
+
+                            <form method="post" id="registerForm">
+                                <div class="form-group mb-3">
+                                    <label for="username">Username</label>
+                                    <input class="form-control" type="text" name="username" autocomplete="username"
+                                        class="form-control" tabindex="3" autocorrect="off" autocapitalize="none" id="register_username">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email">Email</label>
+                                    <input class="form-control" type="email" name="email" autocomplete="email"
+                                        class="form-control" tabindex="3" autocorrect="off" autocapitalize="none" id="register_email">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="password">Password <i class="bi bi-info-circle-fill"
+                                            data-bs-toggle="modal" data-bs-target="#passwordHelperModal"></i></label>
+                                    <input class="form-control" type="password" name="password"
+                                        autocomplete="new-password" class="form-control" tabindex="3" autocorrect="off"
+                                        autocapitalize="none" id="register_password">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="password_confirm">Confirm Password</label>
+                                    <input class="form-control" type="password" name="password_confirm"
+                                        autocomplete="new-password" class="form-control" tabindex="3" autocorrect="off"
+                                        autocapitalize="none" id="register_password_confirm">
+                                </div>
+                                <!-- <div class="form-group mb-3">
+                                    <input type="text" class="form-control my-1" id="captcha" name="captcha" required>
+                                </div> -->
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-outline-primary">Sign up</button>
+                                </div>
+                            </form>
+
+                            <p class="text-center mt-4">By creating an account, you agree to DAWly's <a
+                                    class="text-decoration-none" href="#">Terms of Service</a>, <a
+                                    class="text-decoration-none" href="#">Privacy Policy</a> and <a
+                                    class="text-decoration-none" href="#">Acceptable Use Policy</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js"
+        integrity="sha512-/iBgV43zPirSC0tue+PT/1VHGs7En24twBmT+sVMgn9PTaOpKfbgIyL5YsGKlbAIxcwz9S8W/YEnYjpIYj2Axw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
