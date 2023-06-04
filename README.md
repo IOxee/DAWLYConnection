@@ -1,4 +1,7 @@
-![DAWLYConnection LOGO](assets/img/gitlogo.png)
+<div align="center">  
+    <img src="assets/img/gitlogo.png" alt="DAWLYConnection LOGO">
+    <h4>THIS IS THE FRONTEND OF THE DAWLY API, TO GET THE BACKEND DOWNLOAD THIS REPOSITORY: <a href="https://github.com/IOxee/DAW.ly">LINK</a></h4>
+</div>
 
 # SCREENSHOTS
 | | | |
