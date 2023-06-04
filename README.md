@@ -1,6 +1,6 @@
 <div align="center">  
     <img src="assets/img/gitlogo.png" alt="DAWLYConnection LOGO">
-    <h4>THIS IS THE FRONTEND OF THE DAWLY API, TO GET THE BACKEND DOWNLOAD THIS REPOSITORY: <a href="https://github.com/IOxee/DAW.ly">LINK</a></h4>
+    <h4>THIS IS THE FRONTEND OF THE DAWLY API, TO GET THE BACKEND. </br> DOWNLOAD THIS REPOSITORY: <a href="https://github.com/IOxee/DAW.ly">LINK</a></h4>
 </div>
 
 # SCREENSHOTS
